@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sheriff's Portfolio </title>
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(209, 231, 231);
+        }
+    
+       @media screen and (min-width: 320px) and (max-width: 650px) {
+           body{ 
+               background-color: lightgray;
+               margin-left: 15px;
+           }
+           
+           
+           div{
+              margin-left: 15px;
+           } 
+           
+           .sub-main img{
+               width: 500px;
+               height: 500px
+           } 
+
+           #navbarText b{
+            font-size: 15px;
+           }
+
+           footer li a{
+            margin: 5px;
+            font-size: 10px;
+           }
+           
+        }
+        
+
+        .navbar-brand{
+            font-size: 50px;
+            color: green;
+            transition: 1s;
+        }
+
+        .navbar-brand:hover{
+          color: orangered;
+        }
+
+        #navbarText b{
+            font-size: 20px;
+            color: purple;
+            margin: 5px;
+            transition: 1s;
+        }
+
+        #navbarText b:hover{
+            color: green;
+        }
+
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sub-main{
+            width: 600px;
+            height: 700px;
+        }
+
+        #hire{
+            padding: 7px;
+            font-size: 20px;
+            width: 120px;
+            color: white;
+            background-color: rgb(75, 196, 75);
+            border-radius: 25px;
+            border: none;
+        }
+
+        .main-down{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sub-main img{
+            width: 600px;
+            height: 600px;
+        }
+
+        .sub-main-down{
+          width: 500px;
+          height: 1100px;
+          margin: 10px;
+        }
+
+
+        .sub-main-down img{
+          width: 470px;
+          height: 1000px;
+          border: 15px solid green;
+        }
+
+        #cv{
+            padding: 7px;
+            font-size: 20px;
+            width: 220px;
+            color: white;
+            background-color: rgb(75, 196, 75);
+            border-radius: 20px;
+            border: none;
+            margin-left: 10px;
+        }
+
+        h1{
+          text-align: center;
+        }
+
+        .service{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .sub-service{
+          width: 400px;
+          height: 250px;
+          margin: 10px;
+          text-align: center;
+          background-color: hwb(0 88% 11%);
+        }
+
+        .sub-service img{
+          width: 80px;
+          height: 80px;
+        }
+
+        .sub-service a b{
+          transition: 1s;
+        }
+
+        .sub-service a b:hover{
+          color: green;
+        }
+
+        .portfolio{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .sub-portfolio{
+          text-align: center;
+          width: 400px;
+          height: 390px;
+          margin: 10px;
+          border: 2px dotted blue;
+        }
+
+        .sub-portfolio a{
+          text-decoration: none;
+          color: black;
+        }
+
+        .sub-portfolio a img{
+          width: 250px;
+          height: 150px;
+          border-radius: 10px;
+        }
+
+        .sub-portfolio a b{
+          font-size: 23px;
+          transition: 2s;
+        }
+
+        .sub-portfolio a b:hover{
+          color: purple;
+        }
+
+        .blog{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .sub-blog{
+          text-align: center;
+          width: 400px;
+          height: 350px;
+          border: 2px dotted yellow;
+        }
+
+        .sub-blog a{
+          text-decoration: none;
+          color: black;
+        }
+
+        .sub-blog a img{
+          width: 200px;
+          height: 150px;
+          border-radius: 50px;
+        }
+
+        .sub-blog a b{
+          font-size: 23px;
+          transition: 2s;
+        }
+
+        .sub-blog a b:hover{
+          color: lawngreen;
+        }
+
+        footer{
+          text-align: center;
+          background-color: black;
+          height: 60px;
+        }
+
+        footer li{
+          display: inline-block;
+          margin-top: 10px;
+        }
+
+        footer li a{
+          text-decoration: none;
+          color: white;
+          font-size: 30px;
+          font-family: cursive;
+          margin: 20px;
+          transition: 2s;
+        }
+
+        footer li a:hover{
+          color: peru;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"> <b> SHERIFF </b>  </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="border: 2px solid black; color: yellow;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"> <b> HOME </b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about"> <b> ABOUT </b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#my-services"> <b> SERVICES </b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#my-portfolio"> <b> PORTFOLIO </b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#my-blog"> <b> BLOG </b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#my-contact"> <b> CONTACT </b></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<br><br><br><br>
+<div class="main">
+  <div class="sub-main"> 
+    <br><br><br><br><br><br>
+    <audio src="Akon_-_Ghetto.mp3" Controls> </audio> <br>
+    <label> Enjoy playing "Akon - Ghetto", while scrolling </label>
+
+    <br><br><br><br><br>
+    <h1 style="color: orangered; font-size: 50px;"> <b> HI THERE, </b> </h1>
+    <h1 style="text-align: left;"> <b> I Am A Web Developer </b> </h1>
+    <h3> My expertise is to create and design websites, design graphical interface, develop softwares, build systems, and many more...  </h3>
+    <br><br>
+    <button id="hire"> <a href="https://wa.me/message/N6OSZMGPTR2WD1" style="text-decoration: none; color: white;"> Hire Me </a> </button>
+  </div>
+  <div class="sub-main">
+    <img src="Moifelay.png">
+  </div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<h1 id="about" data-aos="zoom-out"> 
+  <b> ABOUT </b> 
+  <b style="color: green;"> ME </b>
+</h1>
+<br><br>
+<div class="main-down">
+  <div class="sub-main-down" data-aos="fade-right"> 
+    <img src="Camera.jpg">  
+  </div>
+  <div class="sub-main-down" data-aos="fade-left" style="width:600px"> 
+    <b style="font-size: 35px;"> Hello, I Am a </b> <b style="color: green; font-size: 35px;"> Programmer </b>
+    <label> Throughout my career, I have contributed to positive business results through effective organization, prioritization and qualifications are an ideal match for the Programming Requirements and will bring immediate value to any entity/company. <br><br>
+          Over the times, I exercise a calculated and methodical approach to problem-solving. While I am independently motivated, I appreciate collective efforts and collaborate productively within group settings. Moreover, I am competent in coding and programming 
+          support with proficiency in data analytic. <br><br>
+          The available opportunity is especially exciting as my professional goals align with the mission and values of any company. Further, my communication, computer literacy and leadership abilities will serve to support your continued organizational efforts.
+          To illustrate the scope of my career history and professional competencies, please take a moment to review my enclosed projects provided with the links below. I am grateful for your evaluation of my credentials and subsequent interest. 
+    </label>
+    <br><br>
+    <b> Name </b> <label style="margin-left: 50px;"> : </label> <label> Moifelay Moussa Sheriff </label> <br><br>
+    <b> DOB </b> <label style="margin-left: 65px;"> : </label> <label> February /20th/ 2000 </label> <br><br>
+    <b> Address </b> <label style="margin-left: 35px;"> : </label> <label> Buduburam - Central Ghana </label> <br><br>
+    <b> Phone </b> <label style="margin-left: 50px;"> : </label> <label> +233 264 262 543 / +233 533 480 202 </label> <br><br>
+    <b> e-mail </b> <label style="margin-left: 50px;"> : </label> <label> sheriffmoifelay7@gmail.com / moifelay7@yahoo.com </label> <br><br>
+    <b> Freelance </b> <label style="margin-left: 27px;"> : </label> <label> Available </label> <br><br><br>
+    <button id="cv"> <a href="My_Resume.doc" style="text-decoration: none; color: white;"> View My Resume </a> </button>
+  </div>
+</div>
+<br><br><br><br><br><br>
+<h1 id="my-services" data-aos="zoom-in"> 
+  <b> MY </b> 
+  <b style="color: green;"> SERVICES </b>
+</h1>
+<div class="service">
+  <div class="sub-service" data-aos="fade-left"><br>
+    <img src="web design.jpeg"> <br>
+    <a href="" style="text-decoration: none; color: black;">
+      <b style="font-size: 25px;"> WEB DESIGN </b> 
+      <p> Design your web page according to your desired taste </p>
+    </a>
+  </div>
+  <div class="sub-service" data-aos="fade-right"><br>
+    <img src="email icon.jpeg"> <br>
+    <a href="" style="text-decoration: none; color: black;">
+      <b style="font-size: 25px;"> DEVELOPMENT </b> 
+      <p> Develop any kind of computer related projects or kinds </p>
+    </a>
+  </div>
+  <div class="sub-service" data-aos="fade-left"><br>
+    <img src="graphic design.jpeg"><br>
+    <a href="" style="text-decoration: none; color: black;">
+      <b style="font-size: 25px;"> GRAPHIC DESIGN </b> 
+      <p> Design your flyers, posters, book covers, and many more </p>
+    </a>
+  </div>
+  <div class="sub-service" data-aos="fade-right"><br>
+    <img src="responsive design.jpeg"><br>
+    <a href="" style="text-decoration: none; color: black;">
+      <b style="font-size: 25px;"> RESPONSIVE DESIGN </b> 
+      <p> Create automatic response system for your customers </p>
+    </a>
+  </div>
+  <div class="sub-service" data-aos="fade-left"><br>
+    <img src="marketing.jpeg"><br>
+    <a href="" style="text-decoration: none; color: black;">
+      <b style="font-size: 25px;"> MARKETING </b> 
+      <p> Make your products reachable across millions of customers around the world at ease </p>
+    </a>
+  </div>
+  <div class="sub-service" data-aos="fade-right"><br>
+    <img src="support.jpeg"> <br>
+    <a href="" style="text-decoration: none; color: black;">
+      <b style="font-size: 25px;"> SUPPORT </b> 
+      <p> Support your system/company with a trusted and reliable backup system in keeping your records </p>
+    </a>
+  </div>
+</div>
+
+<br><br><br>
+<h1 id="my-portfolio" data-aos="zoom-in"> 
+  <b> MY </b> 
+  <b style="color: green;"> PORTFOLIO </b>
+</h1>
+<div class="portfolio">
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <b> </b>
+    <a href="https://moifelaysheriff.github.io/Adjosec-Investment-Ltd./">
+      <img src="AIL.png"><br>
+      <label style="color: gray;"> View in both Computer & Mobile Modes </label> <br>
+      <b> ADJOSEC INVESTMENT LIMITED </b> <br>
+      <label> A Business Company located at Buduburam, along Winneba-Cape Coast Highway, Gomoa East - Central Ghana </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Soft-Drinks-/">
+      <img src="Cash & Carry.jpg"><br>
+      <label style="color: gray;"> View in both Computer & Mobile Modes </label> <br>
+      <b> ADJOSEC CASH & CARRY </b> <br>
+      <label> The Wholesale Department of AIL at Buduburam, along Winneba-Cape Coast Highway, Gomoa East - Central Ghana </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Receipt-/">
+      <img src="Hotel-Receipt.jpg"><br>
+      <label style="color: gray;"> View in Computer Mode Only</label> <br>
+      <b> Sample RECEIPT </b> <br>
+      <label> A creative project during exercise proudly innovative without pariphrasing any existing brand </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Easybuy/">
+      <img src="Easybuy logo.jfif"><br>
+      <label style="color: gray;"> View in both Computer & Mobile Modes </label> <br>
+      <b> EASY BUY </b> <br>
+      <label> An application software developed by App Developer(s) to help customers easily purchase available products at ease </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"> <br><br>
+    <a href="https://moifelaysheriff.github.io/Liberia-Gov-t/">
+      <img src="Liberia Gov't.jpg"><br>
+      <label style="color: gray;"> View in both Computer & Mobile Modes </label> <br>
+      <b> THE EXECUTIVE MANSION OF LIBERIA </b> <br>
+      <label> Immitating the Official Webpage of the Government of Liberia, might not be exactly like the homepage hence it changes over time </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/emerald-academy/">
+      <img src="Emerald School.png"><br>
+      <label style="color: gray;"> View in both Computer & Mobile Modes </label> <br>
+      <b> EMERALD ACADEMY </b> <br>
+      <label> A creative project during exercise, innovation without pariphrasing any existing brand  </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Ghana-Gov-t-/">
+      <img src="Ghana Gov't.png"><br>
+      <label style="color: gray;"> View in Computer Mode Only </label> <br>
+      <b>  THE GOVERNMENT OF GHANA </b> <br>
+      <label> Immitating the Official Homepage of the Government of Ghana, might not be exactly like the homepage hence it changes over time </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"> <br><br>
+    <a href="https://moifelaysheriff.github.io/UPSA-Student-Login-Portal/">
+      <img src="UPSA - 1.png"><br>
+      <label style="color: gray;"> View in Computer Mode Only </label> <br>
+      <b> STUDENT LOGIN PORTAL OF UPSA </b> <br>
+      <label> The University of Professional Studies Accra - Official Student Login portal, which was also immitated from the original one during exercise  </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/UPSA-Homepage-/">
+      <img src="UPSA - 2.jpg"><br>
+      <label style="color: gray;"> View in Computer Mode Only </label> <br>
+      <b> WEBPAGE OF UPSA </b> <br>
+      <label> The University of Professional Studies of Ghana's Official Homepage which was also immitated from the original one during exercise  </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Messenger/">
+      <img src="Messenger.png"><br>
+      <label style="color: gray;"> View in both Mobile & Computer Modes </label> <br>
+      <b> MMESSENGER Mobile App - Demo  </b> <br>
+      <label> Illustrating how Messenger application will appear in a mobile phone. This is a Mobile app design to help app developer(s) easily build the designed app </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Iphone/">
+      <img src="Iphone.png"><br>
+      <label style="color: gray;"> View in both Mobile & Computer Modes </label> <br>
+      <b> IPHONE View - Demo  </b> <br>
+      <label> Illustrating how applications will appear in an Iphone. This is a Mobile app design to help app developer(s) easily build the designed app </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Insightlancer/">
+      <img src="Insightlancer.jpg"><br>
+      <label style="color: gray;"> View in both Mobile & Computer Modes </label> <br>
+      <b> INSIGHTLANCER Mobile App - Demo  </b> <br>
+      <label> Illustrating how Insightlancer application will appear in a mobile phone. This is a Mobile app design to help app developer(s) easily build the designed app </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Nike-Air-Max/">
+      <img src="Nike Air Max.png"><br>
+      <label style="color: gray;"> View in both Mobile & Computer Modes </label> <br>
+      <b> Footwear Mobile App - Demo  </b> <br>
+      <label> Illustrating how Nike Air Max application will appear in a mobile phone. This is a Mobile app design to help app developer(s) easily build the designed app </label>
+    </a>
+  </div>
+  <div class="sub-portfolio" data-aos="zoom-out"><br><br>
+    <a href="https://moifelaysheriff.github.io/Nike-Air-Force/">
+      <img src="Nike Air Force.jpg"><br>
+      <label style="color: gray;"> View in both Mobile & Computer Modes </label> <br>
+      <b> Another Footwear Mobile App - Demo  </b> <br>
+      <label> Illustrating how Nike Air Force application will appear in a mobile phone. This is a Mobile app design to help app developer(s) easily build the designed app </label>
+    </a>
+  </div>
+</div>
+
+<br><br><br>
+<h1 id="my-blog" data-aos="zoom-in"> 
+  <b> MY </b> 
+  <b style="color: green;"> BLOG </b>
+</h1>
+<div class="blog">
+  <div class="sub-blog" data-aos="zoom-out"><br><br>
+    <a href="https://www.facebook.com/moifelaymousamamaikonfofanasheriff">
+      <img src="facebook.jpg"><br>
+      <label style="color: gray;"> Click here to View My Facebook Page </label> <br>
+      <b> Alhaji Moifelay Ibn Moussa (Sheriff) </b> <br>
+      <label> My Facebook page, since 2014 has been my first social media platform   </label>
+    </a>
+  </div>
+  <div class="sub-blog" data-aos="zoom-out"><br><br>
+  <a href="https://www.instagram.com/@khalifah_i.e_successor">
+      <img src="Instagram.png"><br>
+      <label style="color: gray;"> Click here to View My Instagram Page </label> <br>
+      <b> KHALIFAH {i.e} SUCCESSOR </b> <br>
+      <label> My Instagram page, became  my second means of reaching social media platform   </label>
+    </a>
+  </div>
+  <div class="sub-blog" data-aos="zoom-out"><br><br>
+    <a href="https://www.youtube.com/@moifelaym.sheriff531">
+      <img src="Youtube.png"><br>
+      <label style="color: gray;"> Click here to View My Youtube Page </label> <br>
+      <b> Moifelay Moussa Sheriff </b> <br>
+      <label> My Youtube page, since 2016 became my third social media platform to view the world  </label>
+    </a>
+  </div>
+  <div class="sub-blog" data-aos="zoom-out"><br><br>
+    <a href="https://www.twitter.com/@MoifelayMSherif">
+      <img src="X.png"><br>
+      <label style="color: gray;"> Click here to View My Twitter Page </label> <br>
+      <b> Moifelay M. Sheriff </b> <br>
+      <label> My Twitter page, since 2017 has been my fourth social media platform   </label>
+    </a>
+  </div>
+  <div class="sub-blog" data-aos="zoom-out"><br><br>
+  <a href="https://wa.me/message/N6OSZMGPTR2WD1">
+      <img src="whatsapp.jpg"><br>
+      <label style="color: gray;"> Click here to message me on Whatsapp  </label> <br>
+      <b> KHALIFAH {i.e} SUCCESSOR </b> <br>
+      <label> My Whatsapp page, since 2018 has been my fifth social media platform and the most used lately  </label>
+    </a></div>
+  <div class="sub-blog" data-aos="zoom-out"><br><br>
+    <a href="https://www.linkedin.com/in/moifelay-moussa-sheriff-91867a172">
+      <img src="LinkedIn.png"><br>
+      <label style="color: gray;"> Click here to View My linkedin Page </label> <br>
+      <b> Moifelay Moussa (Sheriff) </b> <br>
+      <label> My linkedin page, since 2018 has been one of my best social media platform </label>
+    </a>
+
+  </div>
+</div>
+<br><br><br>
+<h1 id="my-contact" data-aos="zoom-in"> 
+  <b> MY </b> 
+  <b style="color: green;"> CONTACTS </b>
+</h1>
+<div style="text-align: center;" data-aos="fade-in">
+  <p style="font-size: 30px; color: purple;"> 
+    <h2 style="color: purple;"> For Business Purpose, contact the following: <br>
+        Whatsapp/Call: <br> +233-264-262-543 <br>
+        Whatsapp/Call:<br> +233-533-480-202 <br><br>
+        <b> Or Email </b> <br>
+        <a href="" style="text-decoration: none;"> sheriffmoifelay7@gmail.com </a>  <br>
+        <a href="" style="text-decoration: none;">  khalifah7@gmail.com </a> <br> 
+        <a href="" style="text-decoration: none;"> moifelay7@yahoo.com </a>
+        </a>
+    </h2>
+   </p>
+</div>
+
+<footer>
+  <ul>
+    <li> <a href="#about" style="text-decoration: none;"> About </a> </li>
+    <li> <a href="#my-services"> &copy; By SHERIFF +233-264-262-543 </a> </li>
+  </ul>
+</footer>
+    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
